@@ -4,9 +4,9 @@ var z = 0;
 var dx;
 var dy;
 var dz;
-var a = 10.0;
-var b = 28.0;
-var c = (8.0 / 3.0);
+var a;
+var b;
+var c;
 var dt = 0.01; 
 var i;
 var h=0;
@@ -44,11 +44,17 @@ rotateX(PI/3 + mouseY/float(height) * PI*4);
 //The three Lorenz equations written in code
 
 if(type == 1){
+	  a = 10.0;
+	  b = 28.0;
+	  c = (8.0 / 3.0);
       dx= dt*(a*(y - x));
       dy= dt*((x*(b-z)-y));
       dz= dt*(x*y-c*z);
 } else if(type == 2){
 	
+	  var a = 0.2;
+      var b = 0.2;
+      var c = 8;
 	  dx= dt*(-y-z);
       dy= dt*((x+a*y));
       dz= dt*(b+z*(x-c));
