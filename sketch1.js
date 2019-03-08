@@ -10,6 +10,7 @@ var c = (8.0 / 3.0);
 var dt = 0.01; 
 var i;
 var h=0;
+var type=1;
 
 function setup() {
 
@@ -41,14 +42,23 @@ rotateX(PI/3 + mouseY/float(height) * PI*4);
    for(i=0;i<=1000;i++){
 
 //The three Lorenz equations written in code
+
+if(type == 1){
       dx= dt*(a*(y - x));
       dy= dt*((x*(b-z)-y));
       dz= dt*(x*y-c*z);
-      
+} else if(type == 2){
+	
+	  dx= dt*(-y-z);
+      dy= dt*((x+a*y));
+      dz= dt*(b+z*(x-c));
+	
+}
 //updating x,y, and z positions
       x+=dx;
       y+=dy;
       z+=dz;
+
 
 //sets color and thickness
       stroke(h,255,255);
