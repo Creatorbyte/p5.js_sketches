@@ -10,7 +10,7 @@ var c;
 var dt = 0.01; 
 var i;
 var h=0;
-var type=2;
+var type=1;
 
 function setup() {
 
